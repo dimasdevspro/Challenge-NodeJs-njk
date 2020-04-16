@@ -68,3 +68,11 @@ p {
     width: 100%;
     transition: width 700ms ease-in-out 100ms;
 }
+
+/* ===== CARD ==== */
+
+.card {
+    background-color: blueviolet;
+    width: 800px;
+    height: 400px;
+}
