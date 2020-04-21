@@ -1,5 +1,4 @@
 const fs = require('fs')
-const data = require('./data.json')
 
 exports.post = function (req, res){
 
@@ -11,10 +10,10 @@ const keys = Object.keys(req.body)
         }
     }    
 
-fs.writeFile("data.json", JSON.stringify(data), function(err){
+fs.writeFile("data.json", JSON.stringify(req.body), function(err){
     if (err) return res.send("Write file error!")
 
-        return res.redirect("/teachers")
+        return res.redirect('/teachers')
 })
 
 }
