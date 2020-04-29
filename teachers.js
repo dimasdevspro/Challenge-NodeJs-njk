@@ -21,7 +21,7 @@ if (!foundTeachers) return res.send("Teacher not found!")
             created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeachers.created_at),
         }
 
-return res.render("teachers/show", { teacher: foundTeachers })
+return res.render("teachers/show", { teacher })
 }
 
 exports.post = function (req, res){
@@ -62,4 +62,17 @@ fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         return res.redirect('/teachers')
 })
 
+}
+
+exports.edit = function (req, res){
+
+    const { id } = req.params
+
+    const foundTeachers = data.teachers.find(function(teacher){
+        return teacher.id == id
+    })
+
+    if (!foundTeachers) return res.send("Teacher not found!")
+
+    return res.render('teacher/edit', {teacher})
 }

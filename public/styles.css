@@ -148,5 +148,43 @@ p {
 
 }
 
+/* form */
 
+input {
+    width: 100%;
+    outline: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18 px;
+}
+
+input[type="radio"] {
+    width: 100%;
+    margin-right: 70px;
+            
+}
+
+input::placeholder{
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+
+input[type="text"] {
+    font-size: 18px;
+}
+
+option {
+    font-size: 18px;
+    font-weight: bold;
+}
+button[type="submit"] {
+    padding: 8px 32px;
+    background-color: var(--third-color);
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
 

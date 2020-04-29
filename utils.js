@@ -6,17 +6,26 @@ module.exports = {
         let age = today.getFullYear() - birthDate.getFullYear()
         const month = today.getMonth() - birthDate.getMonth()
 
-        if (month <0 || month == 0 && today.getDate() < birthDate.getDate()) {
+        if (month < 0 || month == 0 && today.getDate() < birthDate.getDate()) {
             age = age - 1
         }
 
         return age
     },
-    graduation: function(select) {
-      const degreeSchool = select
-      
-      return degreeSchool
+    graduation: function graduation(value) {
+        switch(value) {
+            case(medio): return "Ensino Médio Completo";
+            break;
+            case(superior): return "Ensino Superior Completo";
+            break;
+            case(mestrado): return "Mestrado";
+            break;
+            case(doutorado): return "Doutorado";
+            default:
+                return "Selecione a opção que se aproxima"
+        }
+    }
 
-    } 
-
+            
 }
+        
