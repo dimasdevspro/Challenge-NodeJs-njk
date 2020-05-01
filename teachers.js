@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('./data.json')
-const {age} = require('./utils')
+const {age, date} = require('./utils')
 const graduation = require('./utils')
 
 exports.show = function (req, res){
@@ -74,5 +74,10 @@ exports.edit = function (req, res){
 
     if (!foundTeachers) return res.send("Teacher not found!")
 
-    return res.render('teacher/edit', {teacher})
+        const teacher = {
+            ...foundTeachers,
+            birth: date(foundTeachers.birth)
+            }
+
+    return res.render('teachers/edit', {teacher})
 }

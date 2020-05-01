@@ -22,7 +22,30 @@
 
 <div class="item">
 <div>Escolaridade</div>
-<div>{{ teacher.graduation }}</div>
+<div>
+<select name="graduation">
+<option value="medio"
+        {% if teacher.graduation == "medio" %} selected 
+        {% endif %}
+        >Ensino Médio Completo
+</option>
+<option value="superior"
+        {% if teacher.graduation == "superior" %}
+        {% endif %}
+        >Ensino Superior Completo
+</option>
+<option value="mestrado"
+        {% if teacher.graduation == "mestrado" %}
+        {% endif %}
+        >Mestrado
+</option>
+<option value="doutorado"
+        {% if teacher.graduation == "doutorado" %}
+        {% endif %}
+        >Doutorado
+</option>
+</select>
+</div>
 </div>
 
 <div class="item">
@@ -46,7 +69,7 @@
 <div>{{ teacher.created_at }}</div>
 </div>
 
-<button href="/teachers/:id/edit">Editar</button>
+<button id="editar" href="/teachers/:id/edit">Editar</button>
 </section>
 </div>
 
