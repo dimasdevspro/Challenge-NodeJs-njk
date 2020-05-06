@@ -84,8 +84,7 @@ exports.edit = function (req, res){
 
 exports.put = function(req, res){
     const { id } = req.body
-    id = Number(id)
-    
+       
         let index = 0
     const foundTeachers = data.teachers.find(function(teacher, foundIndex){
         if (id == teacher.id){
