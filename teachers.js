@@ -99,7 +99,7 @@ exports.put = function(req, res){
         ...foundTeachers,
         ...req.body,
         birth: Date.parse(req.body.birth),
-
+        id: Number(req.body.id)
     }
 
     data.teachers[index] = teacher
