@@ -2,28 +2,33 @@
 
 {% block content %}
 
-<div class="card table-container">
-<table width=100%>
-<thead>
-<tr>
-<th>Nome Completo</th>
-<th>Acompanhamento</th>
-<th>Ação</th>
-</tr>
-</thead>
-<tbody>
-{%  for teacher in teachers %}
-<tr>
-<td><span style="background-image: url({{teacher.avatar_url}})"></span>
-{{teacher.name}}</td>
-<td>{{teacher.services}}</td>
-<td><a href="/teachers/{{teacher.id}}">ver</a></td>
+    <div class="card table-container">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set length = teachers.length if teachers.length < 5 else 5 %}
+                {% for teacher in range (0, length) %}
+                
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{teachers[teacher].avatar_url}})"></span>
+                            {{teachers[teacher].name}}</td>
+                        <td>{{teachers[teacher].services}}</td>
+                        <td>
+                            <a href="/teachers/{{teacher.id}}">ver</a>
+                        </td>
 
-</tr>
-{%  endfor%}
-</tbody>
-</table>
+                    </tr>
+                    {%  endfor%}
+                </tbody>
+            </table>
+            
+        </div>
 
-</div>
-
-{% endblock content %}
+    {% endblock content %}

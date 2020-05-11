@@ -10,9 +10,8 @@ routes.get('/teachers', function (req, res){
     return res.render("teachers/index")
 })
 
-routes.get('/teachers/listing', function (req, res){
-    return res. render('teachers/listing')
-})
+routes.get('/teachers/listing', teachers.listing)
+
 
 routes.get('/teachers/form', function (req, res){
     return res.render('teachers/form')
