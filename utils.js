@@ -32,7 +32,13 @@ module.exports = {
         const mounth = `0${date.getUTCMonth() + 1}`.slice(-2)
         const day = `0${date.getUTCDay()}`.slice(-2)
 
-        return `${year}-${mounth}-${day}`
+        return {
+            day,
+            month,
+            year,
+            iso: `${year}-${month}-${day}`,
+            birthDay: `${day}/${month}`
+        }
     }
             
 }

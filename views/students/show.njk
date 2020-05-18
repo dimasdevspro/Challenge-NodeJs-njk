@@ -1,0 +1,76 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+<div class="card">
+
+<section 
+        class="avatar"
+        style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover"></section>
+<section class="details">
+<h3>Descrição</h3>
+
+<div class="item">
+<div>Professor</div>
+<div>{{ teacher.name }}</div>
+</div>
+
+<div class="item">
+<div>Idade</div>
+<div>{{ teacher.age }}</div>
+</div>
+
+<div class="item">
+<div>Escolaridade</div>
+<div>
+<select name="graduation">
+<option value="medio"
+        {% if teacher.graduation == "medio" %} selected 
+        {% endif %}
+        >Ensino Médio Completo
+</option>
+<option value="superior"
+        {% if teacher.graduation == "superior" %}
+        {% endif %}
+        >Ensino Superior Completo
+</option>
+<option value="mestrado"
+        {% if teacher.graduation == "mestrado" %}
+        {% endif %}
+        >Mestrado
+</option>
+<option value="doutorado"
+        {% if teacher.graduation == "doutorado" %}
+        {% endif %}
+        >Doutorado
+</option>
+</select>
+</div>
+</div>
+
+<div class="item">
+<div>Tipo de aula</div>
+<div>
+<span>{{ "À distância" if teacher.classes == "EAD" else "Presencial" }}</span>
+</div>
+</div>
+
+<div class="item">
+<div>Acompanhamento</div>
+<div>
+        {% for service in teacher.services %}
+        {{ service }}
+        {% endfor %}
+</div>
+</div>
+
+<div class="item">
+<div>Desde</div>
+<div>{{ teacher.created_at }}</div>
+</div>
+
+<a id="editar" href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
+</section>
+</div>
+
+{% endblock content %}
