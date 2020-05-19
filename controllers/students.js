@@ -3,6 +3,9 @@ const data = require('../data.json')
 const {age, date} = require('../utils')
 const graduation = require('../utils')
 
+exports.index = function (req, res){
+    return res.render("students/index", {students: data.students})
+}
 
 exports.show = function (req, res){
     const { id } = req.params

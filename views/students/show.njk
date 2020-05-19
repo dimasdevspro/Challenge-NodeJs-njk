@@ -6,18 +6,18 @@
 
 <section 
         class="avatar"
-        style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover"></section>
+        style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
 <section class="details">
 <h3>Descrição</h3>
 
 <div class="item">
-<div>Professor</div>
-<div>{{ teacher.name }}</div>
+<div>Aluno</div>
+<div>{{ student.name }}</div>
 </div>
 
 <div class="item">
 <div>Idade</div>
-<div>{{ teacher.age }}</div>
+<div>{{ student.age }}</div>
 </div>
 
 <div class="item">
@@ -25,22 +25,22 @@
 <div>
 <select name="graduation">
 <option value="medio"
-        {% if teacher.graduation == "medio" %} selected 
+        {% if student.graduation == "medio" %} selected 
         {% endif %}
         >Ensino Médio Completo
 </option>
 <option value="superior"
-        {% if teacher.graduation == "superior" %}
+        {% if student.graduation == "superior" %}
         {% endif %}
         >Ensino Superior Completo
 </option>
 <option value="mestrado"
-        {% if teacher.graduation == "mestrado" %}
+        {% if student.graduation == "mestrado" %}
         {% endif %}
         >Mestrado
 </option>
 <option value="doutorado"
-        {% if teacher.graduation == "doutorado" %}
+        {% if student.graduation == "doutorado" %}
         {% endif %}
         >Doutorado
 </option>
@@ -51,14 +51,14 @@
 <div class="item">
 <div>Tipo de aula</div>
 <div>
-<span>{{ "À distância" if teacher.classes == "EAD" else "Presencial" }}</span>
+<span>{{ "À distância" if student.classes == "EAD" else "Presencial" }}</span>
 </div>
 </div>
 
 <div class="item">
 <div>Acompanhamento</div>
 <div>
-        {% for service in teacher.services %}
+        {% for service in student.services %}
         {{ service }}
         {% endfor %}
 </div>
@@ -66,10 +66,10 @@
 
 <div class="item">
 <div>Desde</div>
-<div>{{ teacher.created_at }}</div>
+<div>{{ student.created_at }}</div>
 </div>
 
-<a id="editar" href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
+<a id="editar" href="/students/{{ student.id }}/edit" class="button">Editar</a>
 </section>
 </div>
 

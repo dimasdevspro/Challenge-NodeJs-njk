@@ -14,18 +14,15 @@
                 </tr>
             </thead>
             <tbody>
-                {% set length = teachers.length if teachers.length < 5 else 5 %}
-                {% for teacher in range (0, length) %}
-                
+                {% for student in students %}                
                     <tr>
                         <td>
-                            <span style="background-image: url({{teachers[teacher].avatar_url}})"></span>
-                            {{teachers[teacher].name}}</td>
-                        <td>{{teachers[teacher].services}}</td>
+                            <span style="background-image: url({{student.avatar_url}})"></span>
+                            {{student.name}}</td>
+                        <td>{{student.services}}</td>
                         <td>
-                            <a href="/teachers/{{teacher.id}}">ver</a>
+                            <a href="/students/{{student.id}}">ver</a>
                         </td>
-
                     </tr>
                     {%  endfor%}
                 </tbody>

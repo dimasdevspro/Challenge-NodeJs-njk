@@ -29,7 +29,7 @@ module.exports = {
         const date = new Date (timestamp)
 
         const year = date.getUTCFullYear()
-        const mounth = `0${date.getUTCMonth() + 1}`.slice(-2)
+        const month = `0${date.getUTCMonth() + 1}`.slice(-2)
         const day = `0${date.getUTCDay()}`.slice(-2)
 
         return {
@@ -39,7 +39,27 @@ module.exports = {
             iso: `${year}-${month}-${day}`,
             birthDay: `${day}/${month}`
         }
+    },
+    grade: function grade(value){
+    switch(value) {
+        case(aEF): return "6º Ano do Ensino Fundamental";
+        break;
+        case(bEF): return "7º Ano do Ensino Fundamental";
+        break;
+        case(cEF): return "8º Ano do Ensino Fundamental";
+        break;
+        case(dEF): return "9º Ano do Ensino Fundamental";
+        break;
+        case(eEM): return "1º Ano do Ensino Médio";
+        break;
+        case(fEM): return "2º Ano do Ensino Médio";
+        break;
+        case(gEM): return "3º Ano do Ensino Médio";
+        default:
+            return "verifique o ano novamente!"
+
     }
+}
             
 }
         
