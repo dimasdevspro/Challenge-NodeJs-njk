@@ -20,9 +20,7 @@ if (!foundStudents) return res.send("Student not found!")
 
         const student = {
         ...foundStudents,
-            age: age(foundStudents.birth),
-            services:foundStudents.services.split(","),
-            created_at: new Intl.DateTimeFormat("pt-BR").format(foundStudents.created_at),
+            age: age(foundStudents.birth).birthDay
         }
 
 return res.render("students/show", { student })
@@ -42,12 +40,13 @@ birth = Date.parse(req.body.birth)
 
 let id = 1
 
-
 const lastStudent = data.students[data.students.length - 1]
 
 if (lastStudent) {
     id = lastStudent + 1
 }
+
+id = Number(data.students.length +1)
 
 data.students.push({
     id,

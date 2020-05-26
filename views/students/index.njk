@@ -2,14 +2,16 @@
 
 {% block content %}
 
+<div class="card table-container">
+
 <a href="students/form">Novo</a>
 
-    <div class="card table-container">
         <table width="100%">
             <thead>
                 <tr>
                     <th>Nome Completo</th>
-                    <th>Acompanhamento</th>
+                    <th>Email</th>
+                    <th>Ano Escolar</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -19,12 +21,14 @@
                         <td>
                             <span style="background-image: url({{student.avatar_url}})"></span>
                             {{student.name}}</td>
-                        <td>{{student.services}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.grade}}</td>
+                        
                         <td>
                             <a href="/students/{{student.id}}">ver</a>
                         </td>
                     </tr>
-                    {%  endfor%}
+                    {% endfor %}
                 </tbody>
             </table>
             

@@ -17,56 +17,59 @@
 
 <div class="item">
 <div>Idade</div>
-<div>{{ student.age }}</div>
+<div>{{ student.birth }}</div>
 </div>
 
 <div class="item">
 <div>Escolaridade</div>
 <div>
-<select name="graduation">
-<option value="medio"
-        {% if student.graduation == "medio" %} selected 
-        {% endif %}
-        >Ensino Médio Completo
+<select name="grade">
+<option 
+value="6º Ano do Ensino Fundamental"{% if student.grade == "6º Ano do Ensino Fundamental"%}select{% endif %}>
+6º Ano do Ensino Fundamental
 </option>
-<option value="superior"
-        {% if student.graduation == "superior" %}
-        {% endif %}
-        >Ensino Superior Completo
+<option 
+value="7º Ano do Ensino Fundamental"{% if student.grade == "7º Ano do Ensino Fundamental"%}select{% endif %}>
+7º Ano do Ensino Fundamental
 </option>
-<option value="mestrado"
-        {% if student.graduation == "mestrado" %}
-        {% endif %}
-        >Mestrado
+<option 
+value="8º Ano do Ensino Fundamental"{% if student.grade == "8º Ano do Ensino Fundamental"%}select{% endif %}>
+8º Ano do Ensino Fundamental
 </option>
-<option value="doutorado"
-        {% if student.graduation == "doutorado" %}
-        {% endif %}
-        >Doutorado
+<option 
+value="9º Ano do Ensino Fundamental"{% if student.grade == "9º Ano do Ensino Fundamental"%}select{% endif %}>
+9º Ano do Ensino Fundamental
+</option>
+<option 
+value="1º Ano do Ensino Médio"{% if student.grade == "1º Ano do Ensino Médio"%}select{% endif %}>
+1º Ano do Ensino Médio
+</option>
+<option
+value="2º Ano do Ensino Médio"{% if student.grade == "2º Ano do Ensino Médio"%}select{% endif %}>
+2º Ano do Ensino Médio
+</option>
+<option 
+value="3º Ano do Ensino Médio"{% if student.grade == "3º Ano do Ensino Médio"%}select{% endif %}>
+3º Ano do Ensino Médio
 </option>
 </select>
 </div>
 </div>
 
 <div class="item">
-<div>Tipo de aula</div>
-<div>
-<span>{{ "À distância" if student.classes == "EAD" else "Presencial" }}</span>
+<div>Email</div>
+<div>{{ student.email }}</div>
 </div>
+
+
+<div class="item">
+<div>Ano letivo</div>
+<div>{{ student.grade }}</div>
 </div>
 
 <div class="item">
-<div>Acompanhamento</div>
-<div>
-        {% for service in student.services %}
-        {{ service }}
-        {% endfor %}
-</div>
-</div>
-
-<div class="item">
-<div>Desde</div>
-<div>{{ student.created_at }}</div>
+<div>Carga horária por semana</div>
+<div>{{ student.workload }}</div>
 </div>
 
 <a id="editar" href="/students/{{ student.id }}/edit" class="button">Editar</a>

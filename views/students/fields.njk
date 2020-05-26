@@ -5,7 +5,7 @@
     type="url"
     name="avatar_url"
     placeholder="http://"
-    value = "{{ teacher.avatar_url }}"
+    value = "{{ student.avatar_url }}"
     >
 </div>
 </div>
@@ -16,8 +16,8 @@
 <input 
     type="text"
     name="name"
-    placeholder="Nome do Professor"
-    value = "{{ teacher.name }}"
+    placeholder="Nome do Aluno"
+    value = "{{ student.name }}"
     >
 </div>
 </div>
@@ -28,7 +28,7 @@
 <input 
     type="date"
     name="birth"
-    value="{{ teacher.birth }}">
+    value="{{ student.birth }}">
 </div>
 </div>
 
@@ -38,7 +38,7 @@
 <input 
     type="email"
     name="email"
-    value="{{ teacher.email }}">
+    value="{{ student.email }}">
 </div>
 </div>
 
@@ -46,15 +46,36 @@
 <div>Ano Escolar</div>
 <div>
 
-<select name="grade"></select>
-<option value="aEF" {%if student.schoolyear == "aEF"%}select{%endif%}>6º Ano do Ensino Fundamental</option>
-<option value="bEF"{%if student.schoolyear == "bEF"%}select{%endif%}>7º Ano do Ensino Fundamental</option>
-<option value="cEF"{%if student.schoolyear == "cEF"%}select{%endif%}>8º Ano do Ensino Fundamental</option>
-<option value="dEF"{%if student.schoolyear == "dEF"%}select{%endif%}>9º Ano do Ensino Fundamental</option>
-<option value="eEM"{%if student.schoolyear == "eEM"%}select(%endif%)>1º Ano do Ensino Médio</option>
-<option value="fEM"{%if student.schoolyear == "fEM"%}select(%endif%)>2º Ano do Ensino Médio</option>
-<option value="gEM"{%if student.schoolyear == "gEM"%}select(%endif%)>3º Ano do Ensino Médio</option>
-
+<select name="grade">
+<option 
+value="6º Ano do Ensino Fundamental"{% if student.grade == "6º Ano do Ensino Fundamental"%}select{% endif %}>
+6º Ano do Ensino Fundamental
+</option>
+<option 
+value="7º Ano do Ensino Fundamental"{% if student.grade == "7º Ano do Ensino Fundamental"%}select{% endif %}>
+7º Ano do Ensino Fundamental
+</option>
+<option 
+value="8º Ano do Ensino Fundamental"{% if student.grade == "8º Ano do Ensino Fundamental"%}select{% endif %}>
+8º Ano do Ensino Fundamental
+</option>
+<option 
+value="9º Ano do Ensino Fundamental"{% if student.grade == "9º Ano do Ensino Fundamental"%}select{% endif %}>
+9º Ano do Ensino Fundamental
+</option>
+<option 
+value="1º Ano do Ensino Médio"{% if student.grade == "1º Ano do Ensino Médio"%}select{% endif %}>
+1º Ano do Ensino Médio
+</option>
+<option
+value="2º Ano do Ensino Médio"{% if student.grade == "2º Ano do Ensino Médio"%}select{% endif %}>
+2º Ano do Ensino Médio
+</option>
+<option 
+value="3º Ano do Ensino Médio"{% if student.grade == "3º Ano do Ensino Médio"%}select{% endif %}>
+3º Ano do Ensino Médio
+</option>
+</select>
 </div>
 </div>
 
@@ -64,11 +85,9 @@
         <input 
         type="number"
         name="workload"
-        placeholder="Preencha o valor em horas"
-        value="{{ teacher.workload }}">
+        placeholder="Preencha com valor em horas"
+        value="{{ student.workload }}">
 </div>
 </div>
 
 <button id="editar" type="submit">Salvar</button>
-
-
